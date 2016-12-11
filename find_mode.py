@@ -19,20 +19,21 @@ If there is a tie, return all:
 True
 """
 
+# Learned
+# Remember you can say .values() to get a list of dictionary values
+#       this is O(n)
+#
+
+from collections import Counter
 
 def find_mode(nums):
     """Find the most frequent num(s) in nums."""
-
-    # START SOLUTION
-
-    # Make dictionary of {num:frequency}
 
     num_count = {}
 
     for num in nums:
         num_count[num] = num_count.get(num, 0) + 1
 
-    # Find the *count* of highest letter
 
     highest_count = max(num_count.values())
 
@@ -42,6 +43,23 @@ def find_mode(nums):
 
     for num, count in num_count:
         if count == highest_count:
+            mode.add(num)
+
+    return mode
+
+def find_mode2(nums):
+    """Find the most frequent num(s) in nums."""
+
+    num_count = Counter(nums)
+
+    highest_count = max(num_count.values())
+
+    # For every number with that count, add to set of mode
+
+    mode = set()
+
+    for num in num_count:
+        if num_count[num] == highest_count:
             mode.add(num)
 
     return mode
