@@ -24,3 +24,11 @@ def reverse_int(num):
     for x in range(len(str(num))):
         print num % 10
         num = num / 10
+
+def reverse_int2(num):
+    """Given int, print digits in reverse order, 
+    starting with the ones place."""
+
+    while not num / 10 == num:
+        print num % 10
+        num = num / 10
