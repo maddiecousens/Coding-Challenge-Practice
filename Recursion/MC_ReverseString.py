@@ -1,5 +1,6 @@
 #Write a function that takes a string as a parameter and returns a 
 #new string that is the reverse of the old string.
+# Learned: Can't concatenate string with None!!!!
 
 def reverse_string(word):
     """
