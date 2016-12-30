@@ -139,7 +139,7 @@ i = 0 DONE
 
 
 """
-
+# We can build a heap in O(n)
 bh = BinHeap()
 bh.buildHeap([9,5,6,2,3])
 
